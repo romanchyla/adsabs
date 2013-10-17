@@ -274,8 +274,8 @@ class AppConfig(object):
     ADSDATA_MONGO_DATABASE = 'adsdata'
     ADSDATA_MONGO_HOST = "localhost"
     ADSDATA_MONGO_PORT = 27017
-    ADSDATA_MONGO_SAFE = True
-    ADSDATA_MONGO_USER = 'adsdata'
+    ADSDATA_MONGO_SAFE = False
+    ADSDATA_MONGO_USER = ''
     ADSDATA_MONGO_PASSWORD = ''
 
     # configuration parameters for the recommender
