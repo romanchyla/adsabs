@@ -52,13 +52,9 @@
 	<script type="text/javascript" src="http://aladin.u-strasbg.fr/AladinLite/api/v2/latest/aladin.min.js" charset="utf-8"></script>
 	
 	<script type="text/javascript">
-	
-	$(document).ready(function() {
-	  $('button.close').click(
-     function(){
-        $.get('/buggyme',{msg: $(this).parent().find('span').html(), });
-     });
-  });
+  	{% from 'macros/misc.html' import render_messages %}
+    {{ render_messages(['javascript']) }}
+    
   </script>
     
 	{% block head%}{% endblock %}
@@ -104,6 +100,7 @@
 						<li><a href="{{ url_for('search.search') }}"><i class="icon-search"></i> Search</a></li>
 						<li><a href="{{ url_for('feedback.feedback') }}"><i class="icon-envelope"></i> Feedback</a></li>
 						<li><a href="{{ url_for('pages.page', page_path='help/') }}"><i class="icon-question-sign"></i> Help</a></li>
+						<li><a href="http://careers.stackoverflow.com/jobs/42394/software-developer-it-specialist-smithsonian-astrophysical" target="_blank"><i class="icon-star"></i> Work for us!</a></li>
 						<!-- li><a href="#about">About</a></li-->
 					</ul>
 					<ul class="nav pull-right">
@@ -128,6 +125,11 @@
 	</div> <!-- Navbar --> 
 	<div id="global_body_container" class="container">
 		
+		<div id="globalmsg">
+    {% from 'macros/misc.html' import render_messages %}
+    {{ render_messages(['html']) }}
+    </div>
+    
 		<div id="flashmsg">
 		{% from 'macros/misc.html' import render_flash_message %}
 		{{ render_flash_message() }}
